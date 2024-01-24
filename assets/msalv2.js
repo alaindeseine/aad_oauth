@@ -14,6 +14,7 @@ var aadOauth = (function () {
   // Initialise the myMSALObj for the given client, authority and scope
  function init(config) {
      // TODO: Add support for other MSAL configuration
+     console.log('Initi config: %o', config);
      var authData = {
          clientId: config.clientId,
          authority: config.isB2C ? "https://" + config.tenant + ".b2clogin.com/tfp/" + config.tenant + ".onmicrosoft.com/" + config.policy + "/" : "https://login.microsoftonline.com/" + config.tenant,

@@ -1,4 +1,5 @@
 import 'package:aad_oauth/model/config.dart';
+import 'package:flutter/foundation.dart';
 
 class TokenRefreshRequestDetails {
   final String url;
@@ -20,6 +21,7 @@ class TokenRefreshRequestDetails {
           if (config.origin != null) 'Origin': config.origin!,
         } {
     if (config.clientSecret != null) {
+      debugPrint("Adding client_secret to AuthorizationRequest()");
       params.putIfAbsent('client_secret', () => config.clientSecret!);
     }
   }
