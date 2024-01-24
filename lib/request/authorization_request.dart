@@ -40,6 +40,10 @@ class AuthorizationRequest {
       parameters.putIfAbsent('code_verifier', () => config.codeVerifier!);
     }
 
+    if (config.clientSecret != null) {
+      parameters.putIfAbsent('client_secret', () => config.clientSecret!);
+    }
+
     if (config.codeChallenge != null) {
       parameters.putIfAbsent('code_challenge', () => config.codeChallenge!);
     }
